@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!-- main meta rules-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- this for old browsers like edge  -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- the best reset-->
+  <link rel="stylesheet" href="css/normalize.css">
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+  <!-- font awesome icons-->
+  <link rel="stylesheet" href="css/all.min.css">
+  <!-- main css style files-->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- مثال على عمل ريفكتور للكود ملف يوتلس -->
+  <link rel="stylesheet" href="css/utils.css">
+  <!-- مثال على كيفية عمل لكل سكسن ملف مستقل من اجل سهولة التعديل وايضا من اجل اعادة الاستخدام في مواق اخري -->
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- if it is[IE 9] to make internet explore undestand new tags like header...etc-->
+  <script src="js/html5shiv.min.js"></script>
+  <!-- JQuery library-->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <title> website</title>
+</head>
+
+<body>
+  <!-- start header -->
+
+  <header>
+    <div class="header_art">
+      <!-- محتوى كل سيكشن يجب ان يكون ضمن هذا الكونتينر الذي يترك مسافات جانبية ويتموضع في منتصف الشاشة وعرضه 80%بالمئة -->
+
+      <nav>
+        <div class="nav_logo">
+          <!-- تمنعك خاصية درككيبل من عمل سحب للصور ووضعها في تاب جديد في المتصفح -->
+          <img src="images/logo-alt.webp" alt="mylogo picture" draggable="false">
+          <!-- تمنعك خاصية درككيبل من عمل سحب للصور ووضعها في تاب جديد في المتصفح -->
+        </div>
+        <div class="nav_list">
+          <!-- هنا وضع اليو ال بدون ديف لانها بطبيعة الحال تشبه الديف حيث سوف تحتوي عناصر القائمة داخلها الاي -->
+          <ul>
+            <li><a class="active" href="#">Home</a></li><!-- ممتاز عمل كلاس اكتف متل مانك عامل -->
+            <li><a href="#">about</a></li>
+            <li><a href="#">portFolio</a></li>
+            <li><a href="#">service</a></li>
+            <li><a href="#">Priceses</a></li>
+            <li class="dropdwon"><a href="#">Blog <i class="fas fa-sort-up fa-rotate-90 fa-xs"></i></a>
+              <ul class="dropdwon-menu">
+                <li> <a href="#">blog bost</a></li>
+              </ul>
+
+            </li>
+            <li><a href="#">contact Us</a></li>
+          </ul>
+        </div>
+        <div class="clear"></div>
+      </nav>
+      <div class="container">
+        <div class="header_content">
+          <h1> we are creative agency</h1>
+          <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction font files
+          </p>
+          <button type="button" class="capitalize">get started</button>
+          <button type="button" class="capitalize">learn more</button>
+        </div>
+
+      </div>
+    </div>
+  </header>
+  <!-- start welcome section -->
+  <div class="container">
+    <!--  هون حط الكونتينر في الداخل ايضا يعني دخل الويلكم مباشرة لانه يوضع الكونتينر لضبط المحتوى والمحتوى في الداخل -->
+    <div class="welcome">
+      <h2>welcome to web site</h2>
+      <div class="feature">
+        <i class="fas fa-cogs fa-2x"></i>
+        <!-- هون عطي لكل ايقون كلاس معين لكي تقوم بتنسيقه في ملف سسس  لاننا قلنا لاتستخدم وسم هتمل للتنسيق وانما اعطيه كلاس واستخد هذ الكلاس -->
+        <h3>fully customize</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+        <a href="#">read more</a>
+      </div>
+      <div class="feature mg">
+        <!-- هون اعطى كلاس خاص به لهذا العنصر الاوسط لكي يعمل له مارجن يمين ويسار فقط سماه ام جي -->
+        <i class="fas fa-magic fa-2x"></i>
+        <h3>fully customize</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+        <a href="#">read more</a>
+      </div>
+      <div class="feature">
+        <i class="fas fa-mobile fa-2x"></i>
+        <h3>fully customize</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+        <a href="#">read more</a>
+      </div>
+    </div>
+
+  </div> <!-- end welcome section -->
+
+  <!-- start featured section -->
+  <div class="featured">
+
+    <div class="container">
+      <h2>Featured Work</h2>
+      <!-- هون كتب العنصر feature-item -->
+      <div class="feature">
+        <img src="images/work/work1.webp" alt="work images" title="work image">
+        <!-- تمام لم يستخدم باكروند خلفية وانما استدعى الصورة -->
+        <div class="slide-on">
+          <!--تمام ولكن هون سماها للير-كونتنت -->
+          <div class="slide-on-content">
+            <h4 class="slide-on-title">Ctegory</h4> <!-- سما الكلاس الخاص بها كتيجوري -->
+            <p class="slide-on-desc">loem ipusume dolor</p>
+            <button type="button"><i class="fa fa-search fa-sm"></i></button>
+            <!-- هوي هون حطون في انجور وعمل الانجور ديسبلي انلاين -بلوك وعطاهون باككروند ووسطن الايقونات شاقوليا بانه اعطى الاي بداخله الخاصية لاين هايت نفس ارتفاع الانجور -->
+            <button type="button"><i class="fa fa-edit fa-sm"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="feature mg">
+        <img src="images/work/work2.webp" alt="work images" title="work image">
+        <div class="slide-on">
+          <div class="slide-on-content">
+            <h4 class="slide-on-title">Ctegory</h4>
+            <p class="slide-on-desc">loem ipusume dolor</p>
+            <button type="button"><i class="fa fa-search fa-sm"></i></button>
+            <button type="button"><i class="fa fa-edit fa-sm"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="images/work/work3.webp" alt="work images" title="work image">
+        <div class="slide-on">
+          <div class="slide-on-content">
+            <h4 class="slide-on-title">Ctegory</h4>
+            <p class="slide-on-desc">loem ipusume dolor</p>
+            <button type="button"><i class="fa fa-search fa-sm"></i></button>
+            <button type="button"><i class="fa fa-edit fa-sm"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="images/work/work4.webp" alt="work images" title="work image">
+        <div class="slide-on">
+          <div class="slide-on-content">
+            <h4 class="slide-on-title">Ctegory</h4>
+            <p class="slide-on-desc">loem ipusume dolor</p>
+            <button type="button"><i class="fa fa-search fa-sm"></i></button>
+            <button type="button"><i class="fa fa-edit fa-sm"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="feature mg">
+        <img src="images/work/work5.webp" alt="work images" title="work image">
+        <div class="slide-on">
+          <div class="slide-on-content">
+            <h4 class="slide-on-title">Ctegory</h4>
+            <p class="slide-on-desc">loem ipusume dolor</p>
+            <button type="button"><i class="fa fa-search fa-sm"></i></button>
+            <button type="button"><i class="fa fa-edit fa-sm"></i></button>
+          </div>
+        </div>
+      </div>
+      <div class="feature">
+        <img src="images/work/work6.webp" alt="work images" title="work image">
+        <div class="slide-on">
+          <div class="slide-on-content">
+            <h4 class="slide-on-title">Ctegory</h4>
+            <p class="slide-on-desc">loem ipusume dolor</p>
+            <button type="button"><i class="fa fa-search fa-sm"></i></button>
+            <button type="button"><i class="fa fa-edit fa-sm"></i></button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div> <!-- end featured -->
+
+
+
+  <div class="offers">
+    <!-- start offers section -->
+    <div class="container">
+      <h2>what we are offer</h2>
+      <div class="offer">
+        <i class="fas fa-cogs fa-2x"></i>
+        <!-- هون عطي لكل ايقون كلاس معين لكي تقوم بتنسيقه في ملف سسس  لاننا قلنا لاتستخدم وسم هتمل للتنسيق وانما اعطيه كلاس واستخد هذ الكلاس -->
+        <h3>app mobile</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+
+      </div>
+      <div class="offer mg">
+        <!-- هون اعطى كلاس خاص به لهذا العنصر الاوسط لكي يعمل له مارجن يمين ويسار فقط سماه ام جي -->
+        <i class="fa  fa-rocket fa-2x"></i>
+        <h3>graphic design</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+
+      </div>
+      <div class="offer">
+        <i class="fas fa-mobile fa-2x"></i>
+        <h3>creative idea</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+
+      </div>
+      <div class="offer">
+        <i class="fas fa-cogs fa-2x"></i>
+        <!-- هون عطي لكل ايقون كلاس معين لكي تقوم بتنسيقه في ملف سسس  لاننا قلنا لاتستخدم وسم هتمل للتنسيق وانما اعطيه كلاس واستخد هذ الكلاس -->
+        <h3>marketing</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+
+      </div>
+      <div class="offer mg">
+        <!-- هون اعطى كلاس خاص به لهذا العنصر الاوسط لكي يعمل له مارجن يمين ويسار فقط سماه ام جي -->
+        <i class="fas fa-flask fa-2x"></i>
+        <h3>awesome support</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+
+      </div>
+      <div class="offer">
+        <i class="fa fa-pen fa-2x"></i>
+        <h3>brand design</h3>
+        <p>Web fonts are subject to the same domain restriction font files must be on the sameWebestriction </p>
+
+      </div>
+    </div>
+
+
+  </div> <!--  end offer section -->
+
+  <div class="choose-us">
+    <!-- start choose section -->
+    <div class="container">
+      <div class="choose-us-content">
+        <div class="left-content">
+
+          <h2 class="left-content-title">why choose us</h2>
+
+          <p class="left-content-desc"> Web fonts are subject to the same domain restriction font files must be on the
+            sameWebestrictionWeb fonts are subject to the same domain restriction font files must be on the
+            sameWebestrictioWeb font</p>
+          <div class="left-content-list">
+            <ul>
+              <li> <span><i class="icon fa fa-check fa-sm"></i></span>Web fonts are subject to the same domain</li>
+              <li> <span><i class="icon fa fa-check fa-sm"></i></span>Web fonts are subject to the same domain</li>
+              <li> <span><i class="icon fa fa-check fa-sm"></i></span>Web fonts are subject to the same domain</li>
+              <li> <span><i class="icon fa fa-check fa-sm"></i></span>Web fonts are subject to the same domain</li>
+            </ul>
+          </div>
+        </div>
+        <div class="right-content">
+          <img src="images/about/about2.webp" alt=" picture">
+          <!-- واااو خطااا يجب وضع كل صورة ضمن ديف وعدم ترك الصورة عائمة هكذا بدون ديف يشيلها لانه عند العب على العرض والارتفاع
+          يتم اللعب على عرض وارتفاع الديف الذي يحمل الصورة وعدم اللعب على عرض وارتفاع الصورةنفسها وهذذ
+        لكي لاتبكسل الصورة -->
+
+          <!-- اعطاها كلاس -->
+
+          <ul>
+            <li></li>
+            <li></li>
+            <li class="active"></li>
+            <li></li>
+          </ul>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- end choose section -->
+
+  <!--start statistics section-->
+  <div class="statistics">
+    <div class="layer">
+      <div class="container">
+        <div class="statistics-content">
+          <div class="statistics-item">
+            <i class="icon fa fa-people-carry fa-2x"></i>
+            <!-- هون استخدم تش 3 -->
+            <p class="statistics-number">231</p>
+            <!-- هو ن استخدم سبان-->
+            <p class="statistics-desc">happy alient</p>
+          </div>
+          <div class="statistics-item">
+            <i class="icon fa fa-page4 fa-2x"></i>
+            <p class="statistics-number">456K</p>
+            <p class="statistics-desc">happy alient</p>
+          </div>
+          <div class="statistics-item">
+            <i class="icon fa fa-pager fa-2x"></i>
+            <p class="statistics-number">675</p>
+            <p class="statistics-desc">happy alient</p>
+          </div>
+          <div class="statistics-item">
+            <i class="icon fa fa-people-carry fa-2x"></i>
+            <p class="statistics-number">341</p>
+            <p class="statistics-desc">happy alient</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- end statistics section -->
+
+  <!-- start pricing section-->
+  <div class="pricing">
+    <h2 class="pricing-title">Pricing Table</h2>
+    <div class="container">
+      <div class="pricing-content">
+        <div class="pricing-content-item">
+          <h3 class="title">base plan</h3>
+          <div class="price-circle">
+            <h2 class="price">$19</h2>
+            <span>/Month</span>
+          </div>
+          <div class="plan-features">
+            <p class="disck-space">100 Disck Space</p>
+            <p class="email-count">100 Emails</p>
+            <p class="support">24/24 support</p>
+          </div>
+          <a href="#">Purchase Now</a>
+
+        </div>
+        <div class="pricing-content-item mg">
+          <h3 class="title">Silver plan</h3>
+          <div class="price-circle">
+            <h2 class="price">$34</h2>
+            <span>/Month</span>
+          </div>
+          <div class="plan-features">
+            <p class="disck-space">100 Disck Space</p>
+            <p class="email-count">100 Emails</p>
+            <p class="support">24/24 support</p>
+          </div>
+          <a href="#">Purchase Now</a>
+
+        </div>
+        <div class="pricing-content-item">
+          <h3 class="title">gold plan</h3>
+          <div class="price-circle">
+            <h2 class="price">$40</h2> <!-- named the class dollar -->
+            <span>/Month</span> <!-- give it class its name month -->
+          </div>
+          <div class="plan-features">
+            <!-- حطون في ليست يعني عمل ليست بدل ثلاث براكرافات -->
+            <p class="disck-space">100 Disck Space</p>
+            <p class="email-count">100 Emails</p>
+            <p class="support">24/24 support</p>
+          </div>
+          <!-- عملو زر وليس انجور
+          واعطا كلاس اايضا  -->
+          <a href="#">Purchase Now</a>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div> <!-- end pricing section-->
+
+
+
+  <!-- start team section -->
+  <!-- خربطنا لازم هاد قسم اراء الناس في الموق التيست مونيال وليس قسم الفريق -->
+  <div class="team">
+    <div class="layer">
+      <div class="container">
+
+        <div class="team-content">
+          <div class="left-content">
+            <!-- named it like this team-iteam -->
+            <div class="member-image">
+              <!-- هون حط قسم علوي فيه الصورة وسم ومهنة الشخص والفقرة حطا لحالا -->
+              <img src="images/team/team1.webp" alt="">
+            </div>
+            <div class="content-text">
+              <h3 class="name">joan ahmad</h3>
+              <span class="job"> web designer</span>
+            </div>
+            <p class="desc">Web fonts are subject to the same domain restriction font files must be on theWeb fonts
+              are
+              subject to the same domain restriction font files must be on the</p>
+
+
+          </div>
+          <div class="left-content">
+            <div class="member-image">
+              <img src="images/team/team2.webp" alt="">
+            </div>
+            <div class="content-text">
+              <h3 class="name">joan ahmad</h3>
+              <span class="job"> web designer</span>
+            </div>
+            <p class="desc">Web fonts are subject to the same domain restriction font files must be on theWeb fonts
+              are
+              subject to the same domain restriction font files must be on the</p>
+
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div> <!-- end team secton -->
+
+
+  <!-- start our team section -->
+  <div class="our-team">
+
+    <h2>Our Team</h2>
+
+    <div class="container">
+      <div class="our-team-content">
+        <div class="our-team-item">
+          <div class="team-item-pic">
+            <img src="images/team/team1.webp" alt="">
+          </div>
+          <ul class="social-links">
+            <li><i class="icon fab fa-facebook-f"></i></li>
+            <li><i class="icon fab fa-google-plus-g"></i></li>
+            <li><i class="icon fab fa-twitter"></i></li>
+          </ul>
+          <div class="name-job">
+            <h3 class="team-item-name">Joan Ahmad</h3>
+            <span class="team-item-job">Web Disgner</span>
+          </div>
+        </div><!-- end our-content-item -->
+        <div class="our-team-item mg">
+          <div class="team-item-pic">
+            <img src="images/team/team2.webp" alt="">
+          </div>
+          <ul class="social-links">
+            <!-- حطون بديف وكل ايقونة وعها ضمن انجور ولم يسخدم القائمة -->
+
+            <li><i class="icon fab fa-facebook-f"></i></li>
+
+            <li><i class="icon fab fa-google-plus-g"></i></li>
+            <li><i class="icon fab fa-twitter"></i></li>
+          </ul>
+          <div class="name-job">
+            <h3 class="team-item-name">Joan Ahmad</h3>
+            <span class="team-item-job">Web Disgner</span>
+          </div>
+        </div><!-- end our-content-item -->
+        <div class="our-team-item">
+          <div class="team-item-pic">
+            <img src="images/team/team3.webp" alt="">
+          </div>
+          <ul class="social-links">
+            <li><i class="icon fab fa-facebook-f"></i></li>
+            <li><i class="icon fab fa-google-plus-g"></i></li>
+            <li><i class="icon fab fa-twitter"></i></li>
+          </ul>
+          <div class="name-job">
+            <h3 class="team-item-name">Joan Ahmad</h3>
+            <span class="team-item-job">Web Disgner</span>
+          </div>
+        </div><!-- end our-content-item -->
+      </div>
+    </div>
+  </div><!-- end our team section -->
+
+
+
+  <div class="news">
+    <!-- start news section -->
+    <h2 class="news-tittle">Recent News</h2>
+    <div class="container">
+      <div class="news-content">
+        <div class="news-item">
+          <div class="news-item-image">
+            <img src="images/blog/blog1.webp" alt=" news picture">
+            <ul class="news-info">
+              <li><i class="icon fa fa-user"> </i>JON DOE</li>
+              <li><i class="icon fa fa-clock"></i>18 OCT</li>
+              <li><i class="icon fa fa-comment"> </i>57</li>
+
+            </ul>
+          </div>
+          <div class="news-item-desc">
+            <h2 class="title">Mdian Is Using Visual Studio Code For Coding</h2>
+            <p>subject to the same domain restriction font files must be on thesubject to the same domain restriction
+              font files must be on the</p>
+            <a class="read" href="#"> Read More</a>
+          </div>
+        </div><!-- end news-item -->
+        <div class="news-item mg">
+          <div class="news-item-image">
+            <!-- لازم تحط كل صورة داخل ديف مشان تلعب على الارتفاع والعرض
+          تبع الديف وليس تبع الصورة كي لاتبكسل وتعطيها  طبعا عرض مية بلمية من هذا الديف وارتفاع مية بلمية ايضا -->
+            <img src="images/blog/blog2.webp" alt=" news picture">
+            <ul class="news-info">
+              <!-- طالعن برا هاد الديف   يعني حطون لحالون -->
+              <li><i class="icon fa fa-user"> </i>JON DOE</li>
+              <li><i class="icon fa fa-clock"></i>18 OCT</li>
+              <li><i class="icon fa fa-people-carry"> </i>57</li>
+
+            </ul>
+          </div>
+          <div class="news-item-desc">
+            <h2 class="title">Mdian Is Using Visual Studio Code For Coding</h2>
+            <p>subject to the same domain restriction font files must be on thesubject to the same domain restriction
+              font files must be on the</p>
+            <a class="read" href="#"> Read More</a>
+          </div>
+        </div><!-- end news-item -->
+        <div class="news-item">
+          <div class="news-item-image">
+            <img src="images/blog/blog3.webp" alt=" news picture">
+            <ul class="news-info">
+              <li><i class="icon fa fa-people-carry"> </i>JON DOE</li>
+              <li><i class="icon fa fa-people-carry"></i>18 OCT</li>
+              <li><i class="icon fa fa-people-carry"> </i>57</li>
+
+            </ul>
+          </div>
+          <div class="news-item-desc">
+            <h2 class="title">Mdian Is Using Visual Studio Code For Coding</h2>
+            <p>subject to the same domain restriction font files must be on thesubject to the same domain restriction
+              font files must be on the</p>
+            <a class="read" href="#"> Read More</a>
+          </div>
+        </div><!-- end news-item -->
+      </div>
+
+    </div>
+
+  </div> <!-- end news section -->
+
+  <!-- start touch section -->
+  <div class="touch">
+
+    <h2 class="touch-title"> Keep In Touch</h2>
+    <div class="container">
+      <div class="touch-content">
+        <div class="touch-item">
+          <i class="icon fa fa-mobile fa-2x"></i>
+          <h2 class="icon-desc">phone</h2>
+          <span class="icon-text">12334566677</span>
+
+        </div> <!-- end touch-item section -->
+        <div class="touch-item">
+          <i class="icon fa fa-voicemail fa-2x"></i>
+          <h2 class="icon-desc">Email</h2>
+          <span class="icon-text">starngeman079@gmail.com</span>
+
+        </div> <!-- end touch-item section -->
+        <div class="touch-item">
+          <i class="icon fa fa-address-book fa-2x"></i>
+          <h2 class="icon-desc">Address</h2>
+          <span class="icon-text">1268 bubby drive</span>
+
+        </div> <!-- end touch-item section -->
+      </div> <!-- end touch-content section -->
+      <div class="touch-form">
+        <form action="#">
+          <div class="form-top">
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="Email">
+          </div>
+          <input type="text" placeholder="Subject" class="subject">
+          <textarea name="massage" id="" cols="30" rows="10" placeholder="Describe yourself here..."></textarea>
+          <input type="submit" value="send massage">
+        </form>
+      </div> <!-- end touch form -->
+
+
+
+
+    </div>
+
+  </div> <!-- end toich section -->
+
+
+
+
+
+
+
+
+
+
+
+  <footer>
+
+    <div class="linls">
+      <h2 class="footer-title">LOGO</h2>
+      <ul>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+        <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+
+      </ul>
+      <p class="footer-copyright">copy right@2019 all rights reserved for mdian</p>
+    </div>
+
+  </footer>
+
+  <!-- my java script plugins-->
+  <script src="js/plugins.js"></script>
+</body>
+
+</html>

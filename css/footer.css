@@ -1,0 +1,33 @@
+footer {
+    text-align: center;
+    background: rgb(17, 16, 16);
+    padding: 50px 0;
+}
+
+footer ul {
+    margin-bottom: 20px;
+}
+
+footer li {
+    display: inline-block;
+    padding: 15px;
+    background: #6195FF;
+    margin: 5px;
+    color: white;
+}
+
+.footer-title {
+    color: white;
+    font-weight: bolder;
+    font-size: 40px;
+    padding: 20px 0;
+}
+
+footer li i {
+    color: white;
+
+}
+
+.footer-copyright {
+    color: #988888;
+}

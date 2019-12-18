@@ -1,0 +1,1301 @@
+/* 1-common styles 
+   2- general styles
+   3-sections
+    3-0:header section
+    3-1:home section
+    3-3:about section
+    3-4:portfolio section
+    3-5:services secrtion
+    */
+
+
+
+
+
+
+* {
+  /* very good code */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* this font from google fonts */
+  font-family: 'Varela Round', sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.clear {
+  clear: both;
+}
+
+/*start header*/
+
+header {
+  background-image: url("../images/background/background1.webp");
+  /* confuse*/
+  /*  هون الارتفاع عملو 100 بلمية من الفيو بورت*/
+  /* الفيو بورت هو الجزء المرئي امامك على الشاشة*/
+  /* height: 500px;*/
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+header .header_art {
+  /* هون يمكن استخدام اكثر من طريقةلعمل اللير فوق الديف مثل البوسشن لوضع العناصر فوق بعض */
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+nav {
+  position: fixed;
+  width: 100%;
+
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 10000;
+  /* هوي هون استخدم البوسشن فيكسد و وزد ناقص اندكس لكي يظهره اعلى الهيدر */
+
+  /* overflow: hidden; */
+  /* استعملنا الطريقة الثانية في حل مشكلة الفلوت لانه لدينا قائمة منسدلة هنا وعند استخدام
+  افرفلو :هيدن لن تظهر القائمة المنسدلة */
+}
+
+nav .nav_logo {
+  /* هوي عطا هذا الديف عرض 40% بلمية والقائمة عطاها60%بلمية ثم عمل لهم فلوت يسار */
+  float: left;
+  width: 160px;
+  height: 80px;
+  margin-left: 10%;
+}
+
+nav .nav_logo img {
+  /* عطا هون العرض 30بلمية من حجم الديف */
+  width: 135px;
+}
+
+nav .nav_list {
+  /* هون عطاها عرض 60 بالمية وديف اللوجو عطاه 40 بلمية وعمل فلوت يسار للتنين */
+  float: right;
+
+}
+
+nav .nav_list>ul {
+  list-style-type: none;
+}
+
+nav .nav_list>ul>li {
+  display: inline-block;
+}
+
+nav .nav_list>ul>li>a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  /* اعطا البادنج للوسم  الايييي لكي تصبح كامل المنطقة....منطقة الال اي قابلة للنقر وليس فقط الكلمة */
+  padding: 25px 15px 2px 15px;
+  font-size: 16px;
+  /* border-bottom-width: 0;
+  border-bottom-style: solid;
+  border-bottom-color: blue;*/
+
+
+}
+
+/* nav .nav_list ul li a.active {
+هنا عمل افتر للعنصر اي ذو اكلاس اكتيف واعطاه نفس االقيم ولكن الويدث جعله 100 بلمية 
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  border-bottom-color: #6195FF;
+
+
+} */
+
+/* هنا عمل افتر للعنصر اي ذو اكلاس اكتيف واعطاه نفس االقيم ولكن الويدث جعله 100 بلمية */
+nav .nav_list>ul>li>a.active:after {
+  content: "";
+  display: block;
+  /* الفرق عن الاخريات هو العرض هنا مية بلمية*/
+  width: 100%;
+  /* height: 0; */
+  height: 2px;
+  background: #6195FF;
+  margin-top: 5px;
+  transition: all 0.5s ease-out;
+}
+
+nav .nav_list>ul>li>a:after {
+  /* هنا فقط يمكن عمل جروبنج مع الي فوها ووضع فقط الخصائص المشتركة بينهما واخراج العرض ووضعه لكل واحدة على حدا
+لانه مختلف وليس مشترك */
+  content: "";
+  display: block;
+  width: 0;
+  /* height: 0; */
+  height: 2px;
+  background: #6195FF;
+  margin-top: 5px;
+  transition: all 0.5s ease-out;
+
+}
+
+nav .nav_list>ul>li:hover>a:not(.active):after {
+  /* هون هوي ضاف الهفر لل اي كتالي
+  nav .nav_list ul li a:hover:after */
+  content: "";
+  display: block;
+  width: 100%;
+  /* height: 3px; */
+  /* background: #6195FF; */
+
+}
+
+.dropdwon {
+  position: relative;
+}
+
+
+
+ul.dropdwon-menu {
+
+  background: #6195FF;
+  position: absolute;
+  width: 150px;
+  text-align: center;
+  left: -50%;
+  top: 100%;
+  /*  طبعا هون ممكن نستخدم ديسبلي:نون*/
+  /* بدل من اوباسيتي و فيزيبليتي*/
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .5s ease-in-out, visibility .5s ease-in-out;
+
+}
+
+.dropdwon:hover .dropdwon-menu {
+
+  opacity: 1;
+  visibility: visible;
+}
+
+ul.dropdwon-menu a {
+  color: white;
+  text-decoration: none;
+  /* يمكن وضع هذه الخاصية في القسم العام وبتالي لاداعي لكتابتها كل مرة    
+  هكذا         a{text-decoration:none}*/
+  display: block;
+  padding: 10px;
+  font-size: 14px;
+
+
+
+}
+
+.header_content {
+  /* هون انت عم تسنطر محتويات الديف وهذا الديف ياخذ كامل عرض الاب بتالي سوف صبح متسنطر للاب ايضا وهو الهيدر */
+
+  /* هوي هون استخدم تقنية هيرو اميج لتوسيط هذا العنصر داخل الاب وهو ديف الهيدر*/
+
+  text-align: center;
+  color: white;
+  padding-top: 230px;
+
+}
+
+.header_content h1 {
+  /* هنا قال لازم كل عنصر ياخذ كلاس حتى ولو كان اتش ون وغيره لانه اذا حصل تغير يتم التعديل في ملف ستايل فقط وليس هناك حاجة للتغير في الملفين الهوتمل ولاي اساس*/
+  text-transform: uppercase;
+  word-spacing: 14px;
+  font-size: 2rem;
+  /* حجم خط الجذر وهو وسم هتمل وهو 16بكسل ضرب 2*/
+  font-family: sans-serif;
+
+}
+
+.header_content p {
+  /* 
+   مافي داعي لكل هدول لانو انت قايل للديف هيدر كونت التكست اللاين سنتر
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  */
+  /* هون وضع ارتفاع السطر 1.5 فقط */
+  /* line-height: 20px; */
+  letter-spacing: 2px;
+  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.header_content button {
+  width: 130px;
+  height: 35px;
+  margin-top: 20px;
+  background: white;
+  /* text-transform: capitalize;  مثال على عمل ريفكتور للكود*/
+  border: 0;
+  font-size: 14px;
+  /* بدلا من كتابة الخط المستخدم  نقوم بوراثته من الاب لانه نفس الخط */
+  font-family: inherit;
+  /* اضاف هذه الريديس */
+  border-radius: 3px;
+  /* وهذه */
+  cursor: pointer;
+  /* ضفلو ترانسيشن مشان اطالة التاثير */
+  transition: .5s;
+}
+
+.header_content button:last-child {
+  background: #6195FF;
+  border: 0;
+  text-transform: capitalize;
+  color: white;
+  /* عطا مارجن لواحد من الازرار لكي يبعدو عن بعض قليلا */
+  margin-left: 10px;
+
+}
+
+.header_content button:hover {
+  opacity: 0.7;
+
+}
+
+
+/* start welcome section */
+
+div.welcome {
+
+  text-align: center;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.welcome h2 {
+  width: 35%;
+  margin: auto;
+
+}
+
+.welcome h2::after {
+  /* هوي هون عمل سبان وعطا ديسبلي بلوك وعملو مارجن اوتو مشان يحطو بنص طبعا ووضعه ضمن ديف هذا الديف يحتوي هذا الخط ويحتوي عنوان وبتالي نستطيعع ستخدام هذا الديف اينما اردنا*/
+  content: "";
+  /*لازم تعملا مشتركة لانو كل سكسن فيه هذه الحركة*/
+  display: block;
+  width: 15%;
+  height: 3px;
+  background: #6195FF;
+  margin: 7px auto 0;
+
+}
+
+.welcome .feature i {
+  /* هون قلنا لاتستخم عنصر هتمل مباشرةوانما ضع لكل عنصر كلاس .....يعني بدل اي حطلا كلاس واستخدمو*/
+  margin: 5px 0;
+  color: #6195FF;
+
+}
+
+.welcome .feature h3 {
+  margin: 20px 0;
+
+}
+
+.welcome .feature p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #988888;
+}
+
+.welcome .feature a {
+  display: block;
+  color: #6195FF;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+
+
+}
+
+.welcome .feature {
+  /* عملا بوردر*/
+  border: 1px solid #e8e8e8;
+  float: left;
+  width: 30%;
+  margin-top: 60px;
+  text-align: center;
+  padding: 5px;
+  position: relative;
+
+}
+
+/* add margin left and right to middle item  */
+.welcome .feature.mg {
+  margin: 60px 5% 0;
+}
+
+.welcome .feature::after {
+  /*هون عمل كلاس مسبق وحطلو افتر مشان يصيير مشترك وين من بدو بحط اسم هالكلاس وبصير عندو التاثير
+  يعني انتي هون عملت التاثير بس لل فيتجر  */
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.4s;
+
+}
+
+.welcome .feature:hover:after {
+  width: 100%;
+
+}
+
+.welcome .feature:hover h3 {
+  color: white;
+
+}
+
+/* start featured style */
+.featured {
+  margin-top: 100px;
+  overflow: hidden;
+
+  background: #fbfbfb;
+}
+
+.featured h2 {
+  padding: 50px 0;
+
+  width: 35%;
+  text-align: center;
+  margin: auto;
+}
+
+
+.featured h2::after {
+  content: "";
+  /*لازم تعملا مشتركة لانو كل سكسن فيه هذه الحركة*/
+  display: block;
+  width: 15%;
+  height: 3px;
+  background: #6195FF;
+  margin: 7px auto 0;
+
+}
+
+.featured .feature {
+  float: left;
+  width: 32.5%;
+  margin-top: 15px;
+  text-align: center;
+  padding: 10px 5px;
+  /*  هي بتخلي الصورة وكانو فايتة لجوا الديف من جميع الحواف*/
+  position: relative;
+  /* border: 1px solid green; */
+}
+
+.featured .feature.mg {
+  /* بزبط متل ماعملت*/
+  margin: 15px 1% 0;
+}
+
+.featured img {
+  width: 95%;
+  display: block;
+  margin: auto;
+
+
+}
+
+.featured .slide-on {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  /* top: 50%;     
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;          هذه تستخدم لتوسيط العنصر افقيا وشاقوليا في او فوق ديف معين*/
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  /* ضاف هذه ايضا قال من اجل مايصير مشاكل وعند بيعمل هفر بتصير فيزيبل*/
+  text-align: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity .5s;
+
+
+}
+
+.slide-on-content {
+  padding: 40% 0;
+  /* هااااااااااااام هو كان الافضل تستخدم hero image
+   ,وايضا ملااااحظة هامة يمكن وضع ابن ابسلويوت لاب ابسوليوت ايضا ويتحرك ضمنه وايضا يمن وض1عه للفكسيد يعني مش شرط يكون الاب ريليتف*/
+
+}
+
+.slide-on-content button {
+  background-color: #6195FF;
+  color: #e8e8e8;
+  padding: 5px 10px;
+  width: 40px;
+  height: 50px;
+  border: 0;
+  cursor: pointer;
+
+}
+
+/* .slide-on-content button i{
+  line-height:50px;    هوي استخدم هاي ليوضع الايقونات داخل الزر في المنتصف بس انا مازبطت معي وتوسطنو لحالون بس اذا حطيتو 40 بيزبط 
+} */
+
+.slide-on-title {
+  color: #6195FF;
+
+}
+
+.slide-on-desc {
+  /* هون هوي لعب على شغلت الوسشن حيث اعطى هذا الكلاس بوسشن ريليتف ثم اعطاه توب عشرة يني حركو لتحت وعند عمل هفر بيرجعو يعني بطلعو لفوق من خلال اعطائه التوب  صفر */
+  margin-top: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+  transition-delay: 0.1s;
+}
+
+.featured .slide-on p {
+  color: white;
+}
+
+.featured .feature:hover .slide-on {
+
+  opacity: 1;
+  visibility: visible;
+
+}
+
+.featured .feature:hover .slide-on-desc {
+  margin-top: 5px;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* start offers style */
+
+div.offers {
+
+  text-align: center;
+  margin-top: 100px;
+  overflow: hidden;
+}
+
+.offers h2 {
+  width: 35%;
+  margin: auto;
+
+}
+
+.offers h2::after {
+  /* هوي هون عمل سبان وعطا ديسبلي بلوك وعملو مارجن اوتو مشان يحطو بنص طبعا ووضعه ضمن ديف هذا الديف يحتوي هذا الخط ويحتوي عنوان وبتالي نستطيعع ستخدام هذا الديف اينما اردنا*/
+  content: "";
+  /*لازم تعملا مشتركة لانو كل سكسن فيه هذه الحركة*/
+  display: block;
+  width: 15%;
+  height: 3px;
+  background: #6195FF;
+  margin: 7px auto 0;
+
+}
+
+.offers .offer i {
+  /* هون قلنا لاتستخم عنصر هتمل مباشرةوانما ضع لكل عنصر كلاس .....يعني بدل اي حطلا كلاس واستخدمو*/
+  margin: 5px 0;
+  color: #6195FF;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+
+
+}
+
+.offers .offer h3 {
+
+  margin: 20px 45px;
+  padding-left: 5px;
+  text-align: left;
+
+}
+
+
+
+.offers .offer p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #988888;
+  text-align: left;
+}
+
+.offers .offer a {
+  display: block;
+  color: #6195FF;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+
+
+}
+
+.offers .offer {
+  /* عملا بوردر*/
+  border: 1px solid #e8e8e8;
+  float: left;
+  width: 30%;
+  margin-top: 60px;
+  text-align: center;
+  padding: 5px 10px 20px 20px;
+  position: relative;
+
+}
+
+/* add margin left and right to middle item  */
+.offers .offer.mg {
+  margin: 60px 5% 0;
+}
+
+.offers .offer::after {
+  /*هون عمل كلاس مسبق وحطلو افتر مشان يصيير مشترك وين من بدو بحط اسم هالكلاس وبصير عندو التاثير
+  يعني انتي هون عملت التاثير بس لل فيتجر  */
+  content: "";
+  display: block;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: -1;
+  width: 0;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  transition: 0.4s;
+
+}
+
+.offers .offer:hover:after {
+  width: 100%;
+
+}
+
+.offers .offer:hover h3 {
+  color: white;
+
+}
+
+/* start choose us section */
+.choose-us {
+  background: #fbfbfb;
+  ;
+  padding: 70px 0;
+  margin: 70px 0;
+
+}
+
+.choose-us-content {
+  overflow: hidden;
+
+}
+
+.choose-us-content .left-content {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+
+.choose-us-content .left-content-title {
+  margin-bottom: 50px;
+  text-transform: capitalize;
+  font-family: 'Varela Round', sans-serif;
+  text-transform: capitalize;
+  font-weight: bolder;
+}
+
+.choose-us-content .left-content-desc {
+  line-height: 1.6;
+  color: gray;
+  margin-bottom: 10px;
+}
+
+.choose-us-content .left-content-list span {
+  /* هون عملا لل اي مباشرة لانو ماحط سبان بلاصل */
+  display: inline-block;
+  border: 1px solid #6195FF;
+  /* هوم استخدم البادنج ولم يعطي ارتفاع او عرضؤ ولكن هذه الطريقة التي قمت بها افضل باعطائك عرض وارتفاع  */
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 24px;
+  margin-right: 3px;
+}
+
+.choose-us-content .left-content-list span .icon {
+  color: #6195FF;
+}
+
+.choose-us-content .left-content-list ul li {
+  margin-bottom: 10px;
+  color: gray;
+}
+
+
+
+
+.choose-us-content .left-content-title::after {
+  content: "";
+  /*لازم تعملا مشتركة لانو كل سكسن فيه هذه الحركة*/
+  display: block;
+  width: 8%;
+  height: 3px;
+  background: #6195FF;
+  margin: 7px 0;
+}
+
+.choose-us-content .right-content {
+
+  float: left;
+  width: 48%;
+
+
+}
+
+.choose-us-content .right-content img {
+
+  width: 100%;
+  display: block;
+
+}
+
+.choose-us-content .right-content ul {
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+
+}
+
+.choose-us-content .right-content ul li {
+
+  display: inline-block;
+  margin: 5px;
+
+
+}
+
+.choose-us-content .right-content ul li::after {
+  /* هون هوي اشتغل على ال اي  حيث اعطاها لل اي عرض وارتفاع و بوردر ريديوس وخلصت ....يعني مااتسعمل افترر */
+
+  content: "";
+  display: inline-block;
+  width: 12px;
+  height: 7px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background: gray;
+
+}
+
+.choose-us-content .right-content ul li.active::after {
+
+
+  background: #6195FF;
+}
+
+.choose-us-content .right-content ul li:hover::after {
+
+  /* انا هاي ماكتبتا خاص مع انو سهلة 
+  بس انتبه هوي مااستخدم الافتر لحتى يعمل البوليتس ولكن
+  استخدم ال الاي مباشرة كما قلنا سابقا */
+
+
+  background: #6195FF;
+}
+
+/* start statistics section */
+.statistics {
+  background-image: url(../images/background/background2.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 200px;
+  background-position: center;
+  position: relative;
+}
+
+.statistics-content {
+  overflow: hidden;
+}
+
+.statistics .layer {
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+
+}
+
+.statistics-item {
+  width: 25%;
+  float: left;
+  text-align: center;
+  /* هون هوي مشان يوسط العناصر شاقوليا عطا الاب البادنج من فوق وتحت وليس للكل عنصر ولكن اعتقد انه نفس الشيء ولكن باعطاء الاب البادنج يصبح الامر اسهل */
+  padding: 50px 0;
+
+}
+
+.statistics-item .statistics-number {
+  color: white;
+  font-size: 24px;
+  margin: 10px 0;
+  font-weight: bolder;
+}
+
+.statistics-desc {
+  color: white;
+}
+
+
+.statistics-item .icon {
+
+  color: #6195FF;
+}
+
+/* start pricing section */
+.pricing {}
+
+.pricing-title {
+  width: 35%;
+  margin: auto;
+  text-align: center;
+  padding: 100px 0;
+}
+
+
+.pricing-title::after {
+  content: "";
+  /*لازم تعملا مشتركة لانو كل سكسن فيه هذه الحركة*/
+  display: block;
+  width: 15%;
+  height: 3px;
+  background: #6195FF;
+  margin: 7px auto 0;
+}
+
+.pricing-content {
+  overflow: hidden;
+}
+
+.pricing-content-item {
+  width: 30%;
+  float: left;
+  border: 1px solid #e8e8e8;
+  text-align: center;
+  position: relative;
+
+}
+
+.pricing-content-item.mg {
+  margin: 0 5%;
+}
+
+.pricing-content-item .title {
+  color: #988888;
+  padding: 20px 0;
+
+}
+
+.price-circle {
+  width: 100px;
+  height: 100px;
+  border: 2px solid #6195FF;
+  border-radius: 50%;
+  padding-top: 30px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+
+}
+
+.price {
+  font-size: 25px;
+  font-weight: bold;
+  transition: color 0.6s;
+}
+
+.price-circle span {
+  font-size: 16px;
+  transition: color 0.6s;
+}
+
+.plan-features {
+  color: #988888;
+  line-height: 1.5;
+}
+
+.pricing-content-item a {
+  text-decoration: none;
+  color: #6195FF;
+  display: inline-block;
+  padding: 10px 35px;
+  border: 1px solid #6195FF;
+  text-align: center;
+  margin: 30px 0;
+  cursor: pointer;
+
+}
+
+.pricing-content-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  height: 0%;
+  z-index: -1;
+  transition: height 0.6s;
+
+}
+
+.pricing-content-item:hover::after {
+
+  height: 100%;
+
+
+}
+
+.pricing-content-item:hover .price,
+.pricing-content-item:hover span {
+  color: white;
+
+}
+
+
+
+.team {
+
+  margin: 70px 0;
+  height: 50vh;
+  background: url(../images/background/background3.webp);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+.team .layer {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.team-content {
+  overflow: hidden;
+  width: 85%;
+  margin: auto;
+}
+
+.team-content .left-content {
+  width: 50%;
+  position: relative;
+  padding: 50px 0;
+  float: left;
+}
+
+.team-content .left-content img {
+  width: 60px;
+  height: 60px;
+  /* border-radius: 100%; */
+  display: block;
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  border-radius: 50%;
+
+}
+
+.left-content .content-text {
+  margin-left: 150px;
+  padding-top: 30px;
+}
+
+.left-content .content-text .name {
+  color: white;
+  margin-bottom: 3px;
+  text-transform: capitalize;
+
+}
+
+.left-content .content-text .job {
+  color: #6195FF;
+  text-transform: uppercase;
+  font-size: 13px;
+
+}
+
+.left-content .desc {
+  text-align: justify;
+  margin-left: 70px;
+  margin-top: 30px;
+  color: rgb(247, 243, 243);
+  font-size: 12px;
+  line-height: 1.6;
+  text-transform: capitalize;
+}
+
+/* start our team section */
+.our-team {
+  text-align: center;
+}
+
+.our-team-content {
+  overflow: hidden;
+  margin: 70px 0;
+}
+
+.our-team-item {
+  width: 32%;
+  height: 400px;
+  padding: 30px 10px;
+  background: #e8e8e8;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+
+.our-team-item.mg {
+  margin: 0 2%;
+}
+
+.social-links {
+  list-style: none;
+  position: absolute;
+  right: 25px;
+  top: 30px;
+  display: none;
+  z-index: 999;
+
+}
+
+.social-links .icon {
+  color: white;
+}
+
+.social-links li {
+  padding: 10px;
+  background: #6195FF;
+  cursor: pointer;
+}
+
+.our-team-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: rgba(0, 0, 0, 0.7);
+  transition: height .5s;
+
+
+}
+
+.our-team-item:hover::after {
+  height: 100%;
+}
+
+.our-team-item:hover .social-links {
+  display: block;
+}
+
+.our-team-item:hover .team-item-name {
+  color: white;
+  transition: .5s;
+}
+
+.our-team-item:hover .team-item-job {
+  color: #6195FF;
+  transition: .5s;
+}
+
+.name-job {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 1%);
+  z-index: 4;
+}
+
+.team-item-pic {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+
+
+}
+
+
+.team-item-pic img {
+  width: 100%;
+}
+
+.team-item-name {
+  font-weight: bolder;
+  margin-bottom: 10px;
+
+}
+
+.team-item-job {
+  color: #988888;
+}
+
+
+/* start news section */
+
+.news {
+  background: #fbfbfb;
+  text-align: center;
+  padding: 70px;
+}
+
+.news-tittle {
+  margin: 60px 0;
+}
+
+.news-content {
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+.news-item {
+  width: 32%;
+  float: left;
+  background: white;
+}
+
+.news-item-image {
+  width: 100%;
+  text-align: left;
+}
+
+.news-item-image img {
+  width: 100%;
+  display: block;
+}
+
+.news-info {
+  list-style-type: none;
+  padding: 10px 0 10px 10px;
+  margin: 0;
+
+}
+
+.news-info li {
+  display: inline-block;
+  margin: 5px 10px 10px 0;
+  padding: 5px 2px;
+  text-align: left;
+  font-size: 13px;
+
+}
+
+.news-info li .icon {
+  color: #6195FF;
+  margin-right: 5px;
+  font-size: 15px;
+
+
+}
+
+.news-item-desc {
+
+  text-align: left;
+  padding: 0 10px;
+}
+
+.news-item-desc .title {
+  font-size: 16px;
+  text-align: left;
+  font-weight: bold;
+
+}
+
+.news-item-desc p {
+
+  text-align: justify;
+  color: #988888;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+
+.news-item-desc a.read {
+  text-decoration: none;
+  color: #6195FF;
+  text-transform: capitalize;
+
+}
+
+.news-item.mg {
+  margin: 0 2%;
+}
+
+/* start touch section style */
+.touch {
+  text-align: center;
+  padding: 70px 0;
+}
+
+.touch-title {
+  margin: 70px 0;
+  font-size: 33px;
+  font-weight: bold;
+  font-family: 'Varela Round', sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+.touch-content {
+  overflow: hidden;
+}
+
+.touch-item {
+  width: 33%;
+  float: left;
+
+}
+
+.touch-item .icon {
+  color: #6195FF;
+
+
+}
+
+.touch-item .icon-desc {
+  padding: 17px 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: bold;
+
+
+}
+
+.touch-form {
+  text-align: center;
+  width: 70%;
+  margin: 60px auto 0 auto;
+
+}
+
+.form-top {
+  overflow: hidden;
+}
+
+.form-top input[type="text"],
+.form-top input[type="email"] {
+  display: block;
+  width: 48%;
+  float: left;
+  background: #e8e8e8;
+  height: 40px;
+  padding: 5px;
+  border: 0;
+
+}
+
+.form-top input[type="text"] {
+  margin-right: 4%;
+}
+
+.subject {
+  display: block;
+  width: 100%;
+  background: #e8e8e8;
+  height: 40px;
+  padding: 5px;
+  border: 0;
+  margin-top: 10px;
+}
+
+textarea {
+  display: block;
+  height: 80px;
+  padding: 5px;
+  border: 0;
+  margin-top: 10px;
+  width: 100%;
+  background: #e8e8e8;
+  text-align: left;
+
+}
+
+input[type="submit"] {
+  background: #6195FF;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: 0;
+
+}
+
+
+input[type="submit"]:hover {
+  opacity: 0.7;
+
+}
+
+/* start footer section
+
+مثال كيف تاخذ كامل ستايل لسكشن ما وتضعه في ملف سي اس اس مستقل من اجل سهولة التعديل  واعادة الاستخدام في مواقع اخرى حيث تقوم باخذ جزئية الهتمل مع جزئية السي اس اس وتستخدمه في موقع اخر
+footer {
+  text-align: center;
+  background: rgb(17, 16, 16);
+  padding: 50px 0;
+}
+
+footer ul {
+  margin-bottom: 20px;
+}
+
+footer li {
+  display: inline-block;
+  padding: 15px;
+  background: #6195FF;
+  margin: 5px;
+  color: white;
+}
+
+.footer-title {
+  color: white;
+  font-weight: bolder;
+  font-size: 40px;
+  padding: 20px 0;
+}
+
+footer li i {
+  color: white;
+
+}
+
+.footer-copyright {
+  color: #988888;
+} 
+*/
